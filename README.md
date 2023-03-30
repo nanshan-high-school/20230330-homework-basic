@@ -1,1 +1,1 @@
-# 20230330-homework-basic
+# 20230330 基礎班作業：Bingo (bingo.cpp)
