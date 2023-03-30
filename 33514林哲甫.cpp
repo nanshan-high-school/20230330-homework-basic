@@ -9,9 +9,11 @@ bool bingo = true;
 int row;
 int col;
 int r;
+int line;
 
 //檢查是否獲勝
 bool check() {
+  line=0;
   bingo = true; // 新增 bingo 變量並初始化為 true
   for (int i = 0; i < 5; i++) {
     bingo = true;                 // 每次迭代都重置 bingo 為 true
@@ -21,7 +23,7 @@ bool check() {
       }
     }
     if (bingo) {
-      return true;
+      line++;
     }
   }
 
@@ -33,7 +35,7 @@ bool check() {
       }
     }
     if (bingo) {
-      return true;
+      line++;
     }
   }
 
@@ -46,7 +48,7 @@ bool check() {
     }
   }
   if (bingo) {
-    return true;
+    line++;
   }
 
   bingo = true;
@@ -57,9 +59,14 @@ bool check() {
     }
   }
   if (bingo) {
-    return true;
+    line++;
   }
-  return false;
+  if(line>=3){
+    return true;
+  }else{
+    return false;
+  }
+  
 }
 
 int main() {
